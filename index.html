@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Тренажёр ОГЭ по математике</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      background: rgba(0,0,0,0.35);
+      padding: 25px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    .subtitle {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+    .btn {
+      display: block;
+      text-align: center;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .vk {
+      background: #4C75A3;
+      color: white;
+    }
+
+    .max {
+      background: #ff6a00;
+      color: white;
+    }
+
+    .btn:hover {
+      transform: scale(1.03);
+    }
+
+    .task {
+      margin-top: 20px;
+      padding: 15px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 12px;
+    }
+
+    button {
+      margin-top: 10px;
+      padding: 10px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background: #00c896;
+      color: white;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      margin-top: 10px;
+    }
+
+    .result {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Юлия Владимировна</h1>
+    <div class="subtitle">Репетитор по математике</div>
+
+    <a class="btn vk" href="https://vk.ru/id711877188" target="_blank">Написать в VK</a>
+    <a class="btn max" href="https://max.ru/id501906671902_biz" target="_blank">Написать в MAX</a>
+
+    <div class="task">
+      <h3>Тренажёр ОГЭ</h3>
+      <p>Решите пример:</p>
+      <p><b>12 + 7 × 3 = ?</b></p>
+
+      <input id="answer" placeholder="Введите ответ"/>
+      <button onclick="check()">Проверить</button>
+      <div class="result" id="result"></div>
+    </div>
+  </div>
+
+  <script>
+    function check() {
+      let val = document.getElementById("answer").value;
+      let res = document.getElementById("result");
+
+      if (parseInt(val) === 33) {
+        res.innerHTML = "✔ Верно!";
+        res.style.color = "#00ffb3";
+      } else {
+        res.innerHTML = "✖ Неверно, попробуй ещё раз";
+        res.style.color = "#ff6b6b";
+      }
+    }
+  </script>
+</body>
+</html>
